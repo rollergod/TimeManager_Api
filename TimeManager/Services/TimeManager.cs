@@ -17,7 +17,7 @@ namespace TimeManager_Api.Services
 
         public string GetDate()
         {
-            return (string.IsNullOrEmpty(_currentTimeZone)) ?
+            return _currentTimeZone == "UTC" ?
                 _currentDate.ToUniversalTime().ToString("dd.MM.yyyy HH:mm:ss zzz") :
                 _currentDate.ToString("dd.MM.yyyy HH:mm:ss zzz");
         }
