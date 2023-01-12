@@ -57,9 +57,12 @@ namespace TimeManager_Api.Services
 
         private static bool MatchStringPatternToDateTime(string date,string pattern, out DateTime _currentDate)
         {
-            return DateTime.TryParseExact(date, pattern, CultureInfo.InvariantCulture,
-                                                       DateTimeStyles.None,
-                                                       out _currentDate);
+            return DateTime.TryParseExact(
+                date,
+                pattern,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out _currentDate);
         }
 
         private TimeZoneInfo GetTimeZone(string timeZone)
